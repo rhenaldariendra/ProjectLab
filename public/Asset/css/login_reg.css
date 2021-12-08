@@ -47,6 +47,9 @@ a{
 input{
     border-style: none;
 }
+.input-placeholders select{
+    background-color: white;
+}
 
 .input-box {
     width: 100%;
@@ -69,6 +72,7 @@ input{
     background-color: #38ACEC;
     padding: 10px 15px;
     color: #fff;
+    cursor: pointer;
     border-radius: 10px;
 }
 .input-placeholders a{

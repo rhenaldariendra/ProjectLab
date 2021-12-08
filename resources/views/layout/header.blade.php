@@ -6,9 +6,9 @@
     </div>
 
     <div class="navbar-right">
-        <a href="#">Home</a>
+        <a href="/">Home</a>
         <a href="#">Search Product</a>
         <a href="/login">Login</a>
-        <a href="#">Register</a>
+        <a href="/register">Register</a>
     </div>
 </div>

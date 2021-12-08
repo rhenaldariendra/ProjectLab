@@ -5,18 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/Asset/css/login_reg.css">
-    <title>Login</title>
+    <title>Register</title>
 </head>
 <body>
     {{View::make('layout.header')}}
     <div class="container">
         <div class="box">
             <div class="box-top">
-                <h2>Login</h2>
+                <h2>Register</h2>
             </div>
             <div class="box-bottom">
-                <form action="{{route('login-user')}}" method="POST">
+                <form action="{{route('register-user')}}" method="POST">
                     @csrf
+                    <div class="input-box">
+                        <p>Name</p>
+                        <div class="input-placeholders">
+                            <input class="inputs" type="text" name="name" id="name">
+                        </div>
+                    </div>
+
                     <div class="input-box">
                         <p>E-Mail Address</p>
                         <div class="input-placeholders">
@@ -30,17 +37,26 @@
                         </div>
                     </div>
                     <div class="input-box">
-                        <p></p>
+                        <p>Confirm Password</p>
                         <div class="input-placeholders">
-                            <input type="checkbox" name="" id="">
-                            <p>Remember Me</p>
+                            <input class="inputs" type="confpassword" name="confpassword" id="confpassword">
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <p>Gender</p>
+                        <div class="input-placeholders">
+                            <select class="inputs" name="gender" id="gender">
+                                {{-- <option value="Null"></option> --}}
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
                         </div>
                     </div>
                     <div class="input-box">
                         <p></p>
                         <div class="input-placeholders">
-                            <input class="btn"type="submit" value="login">
-                            <a href="#">Forgot Your Password?</a>
+                            <input class="btn"type="submit" value="Register">
                         </div>
                     </div>
 
