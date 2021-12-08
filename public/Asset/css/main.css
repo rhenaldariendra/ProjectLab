@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    align-items: center;
+    background-color: #38ACEC;
+    height: 9vh;
+}
+
+.navbar-left h2{
+    color: #fff;
+    font-size: 25px;
+}
+.navbar-right a{
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0 10px;
+    color: #fff;
+}
+
+
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7vh;
+    background-color: #38ACEC;
+}
+.footer h2{
+    color: #fff;
+}
