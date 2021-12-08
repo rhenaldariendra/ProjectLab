@@ -10,8 +10,28 @@
 <body>
     {{View::make('layout.header')}}
     <div class="contents">
+        <div class = "border">
+            <div class="box1">
+                <img class = "box1_im" src="/Asset/Image/lab_1.jpg" alt="">
+                <h1>Ayam Negeri</h1>
+                <p>Lorem ipsum</p>
+                <button type="submit" class="btn">
+                    Detail
+                </button>
+            </div>
+            <div class="box"> <p>tes</p></div>
+            <div class="box"> <p>tes</p></div>
+            <div class="box"> <p>tes</p></div>
+            <div class="box"> <p>tes</p></div>
+            <div class="box"> <p>tes</p></div>
+            <div class="box"> <p>tes</p></div>
+            <div class="box"> <p>tes</p></div>
+            <div class="box"> <p>tes</p></div>
+            <div class="box"> <p>tes</p></div>
+        </div>
 
     </div>
     {{View::make('layout.footer')}}
+
 </body>
 </html>
