@@ -7,22 +7,21 @@
 
 .navbar{
     display: flex;
-    justify-content: space-between;
-    padding: 0 30px;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: #38ACEC;
-    height: 9vh;
+    padding: 0 30px;
+    height: 20vh;
 }
 
-.navbar-left h2{
-    color: #fff;
-    font-size: 25px;
+.navbar-up{
+    padding-bottom: 20px;
 }
-.navbar-right a{
+.navbar-down a{
     text-decoration: none;
     font-size: 20px;
     padding: 0 10px;
-    color: #fff;
+    color: #181D31;
 }
 
 
@@ -32,8 +31,8 @@
     align-items: center;
     justify-content: center;
     height: 7vh;
-    background-color: #38ACEC;
+    background-color: #D4C9D4;
 }
 .footer h2{
-    color: #fff;
+    color: #181D31;
 }

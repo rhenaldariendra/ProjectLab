@@ -3,79 +3,78 @@
     padding: 0;
 }
 
+input, button{
+    border-style: none;
+}
+
 a{
     text-decoration: none;
 }
+body{
+    background-color: #FCF5E0;
+}
 
 .container{
-    height: 84vh;
-    background-color: #EAEAEA;
+    height: 73vh;
 }
 
-.box{
+form{
+    position:absolute;
+    display: flex;
+    width: 375px;
     height: fit-content;
-    /* padding: 20px; */
-    width: 100vh;
-    transform: translateX(-50%);
-    position: relative;
+    top: 50%;
     left: 50%;
-    top: 50px;
-
+    transform: translate(-50%,-50%);
+    justify-content: center;
+    flex-direction:column;
 }
-.box-top h2{
-    font-weight: normal;
+input, .inputs{
+    height: 54px;
+    border: 1px solid #4B4B4B;
+    background-color: #FCF5E0;
+    border-radius: 8px;
+    text-indent: 20px;
 }
-.box-top{
-    border: 1px solid #D0CFCF;
-    border-radius: 10px 10px 0 0;
-    background-color: #EAEAEA;
-    padding: 10px 20px;
-}
-.box-bottom{
-    padding: 10px 200px;
-    background-color: #fff;
-    border: 1px solid #D0CFCF;
-    border-radius: 0 0 10px 10px;
-}
-
-.input-placeholders{
-    display: flex;
+.form-group input, .inputs{
     width: 100%;
-    align-items: center;
 }
 
-input{
-    border-style: none;
-}
-.input-placeholders select{
-    background-color: white;
+.bi{
+    position: absolute;
+    left: 90%;
+    margin-top: 20px;
+    /* top:10px; */
+    /* top: 40px; */
+    /* bottom: 0; */
+    cursor: pointer;
+    font-size:19px;
 }
 
-.input-box {
-    width: 100%;
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-}
-.input-box p{
+.box p{
+    position:relative;
+    text-align: center;
+    top: 18px;
+    left: 20px;
+    background-color:#FCF5E0;
+    font-size: 20px;
+    width: fit-content;
     padding: 0 10px;
-    width: 20%;
+    /* width: 200px; */
+    height:30px;
 }
-.input-box .inputs{
-    border: 1px solid #D0CFCF;
-    border-radius: 5px;
-    padding: 10px;
-    width: 100%;
+
+:placeholder-shown{
+    font-size:14px;
+    text-indent: 20px;
 }
 
 .btn{
-    background-color: #38ACEC;
-    padding: 10px 15px;
-    color: #fff;
+    background-color:#D4C9D4;
+    border-radius: 8px;
+    height: 45px;
+    margin-top: 20px;
+    /* padding-top: 10px; */
     cursor: pointer;
-    border-radius: 10px;
-}
-.input-placeholders a{
-    padding-left: 20px;
-    color: #38ACEC;
+    font-size: 15px;
 }
