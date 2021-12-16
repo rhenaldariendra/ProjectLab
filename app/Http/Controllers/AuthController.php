@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-
-
+use Illuminate\Support\Str;
 class AuthController extends Controller
 {
     public function index(){
@@ -24,6 +23,10 @@ class AuthController extends Controller
         $credential = $request->only('email', 'password');
         // dd($credential);
         if(Auth::check($credential)){
+            // if(Str::contains($request->only('account_type'), 'User')){
+            //     $request->session()->put('User', $user);
+
+            // }
             return redirect()->intended('home')->withSuccess('Login successful');
         }
         return redirect()->intended('home')->withSuccess('Login failed');
@@ -47,7 +50,6 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'account_type' => '1',
             'gender'=>$data['gender']
         ]);
         $check->save();
