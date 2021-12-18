@@ -14,6 +14,8 @@ class AuthController extends Controller
         return view('login');
     }
 
+
+
     public function login(Request $request){
         $request->validate([
             'email' => 'required',
@@ -21,12 +23,10 @@ class AuthController extends Controller
         ]);
 
         $credential = $request->only('email', 'password');
-        // dd($credential);
-        if(Auth::check($credential)){
-            // if(Str::contains($request->only('account_type'), 'User')){
-            //     $request->session()->put('User', $user);
+        $user = User::where(['email'=>$request->email])->first();
 
-            // }
+        if(Auth::attempt($credential)){
+            $request->session()->put('user', $user);
             return redirect()->intended('home')->withSuccess('Login successful');
         }
         return redirect()->intended('home')->withSuccess('Login failed');
@@ -63,7 +63,10 @@ class AuthController extends Controller
         return redirect('login')->withSuccess('Not Allowed');
     }
 
-
-
-
+    public function logout() {
+        Session::flush();
+        Session::forget('user');
+        Auth::logout();
+        return Redirect('login');
+    }
 }

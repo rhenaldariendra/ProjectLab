@@ -9,29 +9,34 @@
 </head>
 <body>
     {{View::make('layout.header')}}
+
     <div class="contents">
-        <div class = "border">
-            <div class="box1">
-                <img class = "box1_im" src="/Asset/Image/lab_1.jpg" alt="">
-                <h1>Ayam Negeri</h1>
-                <p>Lorem ipsum</p>
-                <button type="submit" class="btn">
-                    Detail
-                </button>
+
+        <div class="box">
+            <div class="slide-img">
+              <img src="./Asset/Image/lab_1.jpg" alt="" />
+              <div class="overlay">
+                @if(Session::has('user'))
+                <a href="#" class="buy-btn">Product Detail</a>
+                    @if(Session::get('user')['is_admin']==true)
+                    <a href="#" class="buy-btn">Update Product</a>
+                    @endif
+                @else
+                <a href="#" class="buy-btn">Product Detail</a>
+                @endif
+              </div>
             </div>
-            <div class="box"> <p>tes</p></div>
-            <div class="box"> <p>tes</p></div>
-            <div class="box"> <p>tes</p></div>
-            <div class="box"> <p>tes</p></div>
-            <div class="box"> <p>tes</p></div>
-            <div class="box"> <p>tes</p></div>
-            <div class="box"> <p>tes</p></div>
-            <div class="box"> <p>tes</p></div>
-            <div class="box"> <p>tes</p></div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Sweatshirt</a>
+              </div>
+              <a href="#" class="price">Rp. 150.000</a>
+            </div>
         </div>
 
     </div>
-    {{View::make('layout.footer')}}
 
+
+    {{View::make('layout.footer')}}
 </body>
 </html>

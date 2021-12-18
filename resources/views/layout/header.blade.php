@@ -8,7 +8,12 @@
     <div class="navbar-down">
         <a href="/">Home</a>
         <a href="#">Search Product</a>
+        @guest
         <a href="/login">Login</a>
         <a href="/register">Register</a>
+        @else
+        <a href="{{route('logout')}}">Log Out</a>
+        @endguest
+
     </div>
 </div>
