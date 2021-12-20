@@ -28,9 +28,9 @@
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Sweatshirt</a>
+                <a href="#">Ayam Kampus</a>
               </div>
-              <a href="#" class="price">Rp. 150.000</a>
+              <a href="#" class="price">Semasuknya kantung mahasiswa</a>
             </div>
         </div>
 
