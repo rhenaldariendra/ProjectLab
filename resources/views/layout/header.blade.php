@@ -12,8 +12,8 @@
         <a href="/login">Login</a>
         <a href="/register">Register</a>
         @else
+        
         <a href="{{route('logout')}}">Log Out</a>
         @endguest
-
     </div>
 </div>

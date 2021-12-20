@@ -8,9 +8,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+
 class AuthController extends Controller
 {
+    // use AuthenticatesUsers;
     public function index(){
+        // $info = [];
+        // return view('login', $info);
         return view('login');
     }
 
@@ -24,9 +30,19 @@ class AuthController extends Controller
 
         $credential = $request->only('email', 'password');
         $user = User::where(['email'=>$request->email])->first();
+        // $remember_me  = ( !empty( $request->remember_me ) )? TRUE : FALSE;
 
         if(Auth::attempt($credential)){
             $request->session()->put('user', $user);
+            if($request->remember_me==null){
+                
+            }
+            else{
+                setcookie('email', $request->email, time()+7200);
+                setcookie('password', $request->password, time()+7200);
+            }
+            // die();
+            Auth::login($user);
             return redirect()->intended('home')->withSuccess('Login successful');
         }
         return redirect()->intended('home')->withSuccess('Login failed');

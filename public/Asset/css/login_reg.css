@@ -78,3 +78,24 @@ input, .inputs{
     cursor: pointer;
     font-size: 15px;
 }
+
+
+
+.remember{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding-top:10px;
+}
+
+.remember input{
+    height: 20px;
+    /* font-size:10px; */
+}
+
+.remember h1{
+    font-weight: lighter;
+    padding-left: 20px;
+    height: 20px;
+    font-size:20px;
+}

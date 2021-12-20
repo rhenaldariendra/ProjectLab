@@ -12,6 +12,17 @@
 </head>
 <body>
     {{View::make('layout.header')}}
+    @php
+        if(isset($_COOKIE['email'])&&isset($_COOKIE['password'])){
+            $email = $_COOKIE['email'];
+            $password = $_COOKIE['password'];
+            $remembered = "checked='checked'";
+        }else{
+            $email = '';
+            $password = '';
+            $remembered ="";
+        }
+    @endphp
     <div class="container">
 
         <div class="box">
@@ -19,18 +30,18 @@
                 @csrf
                 <div class="form-group">
                     <p>Username</p>
-                    <input type="email" name="email" id="email" placeholder="mbwekcenter@binus.ac.id">
+                    <input type="email" name="email" id="email" placeholder="mbwekcenter@binus.ac.id" value="{{$email}}">
                 </div>
                 <div class="form-group">
                     <p>Password</p>
                     <i onclick="toggleIconPassword(this)"class="bi bi-eye" id="togglePassword"></i>
-                    <input type="password" name="password" id="password" placeholder="Password">
+                    <input type="password" name="password" id="password" placeholder="Password" value="{{$password}}">
+                </div>
+                <div class="remember">
+                    <input type="checkbox" name="remember_me" id="remember_me" {{$remembered}}>
+                    <h1>Remember me</h1>
                 </div>
                 <button type="submit" value="Login" class="btn">Login</button>
-
-
-
-
             </form>
         </div>
 
