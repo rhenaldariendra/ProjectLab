@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -20,6 +20,24 @@ class AuthController extends Controller
         return view('login');
     }
 
+    public function updateIndex(Request $request){
+        $select = DB::table('users')->where('id', Session::get('user')['id'])->first();
+        // dd($select);
+        return view('updateAccount', ['select' => $select]);
+    }
+
+    public function updateProfile(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'password' => 'required|min:8|required_with:confpassword',
+            'confpassword' => 'required|min:8',
+            'gender' => 'required',
+        ]);
+        User::find(auth()->user()->id)->update(['name'=>$request->name]);
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->password)]);
+        User::find(auth()->user()->id)->update(['gender'=>$request->gender]);
+        return redirect('home');
+    }
 
 
     public function login(Request $request){
@@ -30,12 +48,11 @@ class AuthController extends Controller
 
         $credential = $request->only('email', 'password');
         $user = User::where(['email'=>$request->email])->first();
-        // $remember_me  = ( !empty( $request->remember_me ) )? TRUE : FALSE;
 
         if(Auth::attempt($credential)){
             $request->session()->put('user', $user);
             if($request->remember_me==null){
-                
+
             }
             else{
                 setcookie('email', $request->email, time()+7200);

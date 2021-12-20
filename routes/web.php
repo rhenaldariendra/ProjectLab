@@ -29,6 +29,8 @@ Route::get('/register', function (){
 });
 
 
+Route::get('myaccount', [AuthController::class, 'updateIndex'])->name('account');
+
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::get('register', [AuthController::class, 'register'])->name('register');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -36,3 +38,4 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('register-users', [AuthController::class, 'registration'])->name('register-user');
 Route::post('login-user', [AuthController::class, 'login'])->name('login-user');
 
+Route::post('updateProfile', [AuthController::class, 'updateProfile'])->name('account-update');
