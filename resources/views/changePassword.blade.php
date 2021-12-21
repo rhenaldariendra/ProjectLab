@@ -15,32 +15,22 @@
 
     <div class="container">
         <div class="box">
-            <form action="{{route('account-update')}}" method="POST">
+            <form action="{{route('password-update')}}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <p>Name</p>
-                    <input type="text" name="name" id="name" placeholder="mbwekcenter" value="{{Auth::user()->name}}">
+                    <p>Old Password</p>
+                    <input type="password" name="password" id="password" placeholder="mbwekcenter">
                 </div>
                 <div class="form-group">
-                    <p>Email</p>
-                    <input type="text" name="email" id="email" placeholder="mbwekcenter" value="{{Auth::user()->email}}">
+                    <p>New Password</p>
+                    <input type="password" name="newpassword" id="newpassword" placeholder="mbwekcenter">
                 </div>
-
                 <div class="form-group">
-                    <p>Gender</p>
-                    <select class="inputs" name="gender" id="gender">
-                        @if (Auth::user()->gender=="Female")
-
-                        <option value="Female">Female</option>
-                        <option value="Male">Male</option>
-                        @else
-
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        @endif
-
-                    </select>
+                    <p>Old Password</p>
+                    <input type="password" name="confpassword" id="confpassword" placeholder="mbwekcenter">
                 </div>
+
+
                 <button type="submit" value="Register" class="btn">Update</button>
                 <button class="btn"><a href="/myaccount">Back</a></button>
 

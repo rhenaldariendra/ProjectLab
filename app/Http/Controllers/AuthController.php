@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,32 +12,36 @@ use Illuminate\Support\Str;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\DB;
 
+
 class AuthController extends Controller
 {
     // use AuthenticatesUsers;
     public function index(){
-        // $info = [];
-        // return view('login', $info);
         return view('login');
     }
-
-    public function updateIndex(Request $request){
-        $select = DB::table('users')->where('id', Session::get('user')['id'])->first();
-        // dd($select);
-        return view('updateAccount', ['select' => $select]);
+    public function loginValidateToShowDetailProduct($id){
+        if(!Auth::check()){
+            return redirect("login")->withSuccess('You are not allowed to access');
+        }
+        $data = Product::find($id);
+        $title = $data['title'];
+        return view('detail', compact('data', 'title'));
     }
 
+
     public function updateProfile(Request $request){
-        $request->validate([
-            'name' => 'required',
-            'password' => 'required|min:8|required_with:confpassword',
-            'confpassword' => 'required|min:8',
-            'gender' => 'required',
-        ]);
+        // $request->validate([
+        //     'password' => 'same:confpassword',
+        // ]);
         User::find(auth()->user()->id)->update(['name'=>$request->name]);
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->password)]);
         User::find(auth()->user()->id)->update(['gender'=>$request->gender]);
-        return redirect('home');
+        return redirect('myaccount');
+    }
+
+    public function updatePassword(Request $request){
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->newpassword)]);
+        return redirect('myaccount');
+
     }
 
 
@@ -58,11 +63,10 @@ class AuthController extends Controller
                 setcookie('email', $request->email, time()+7200);
                 setcookie('password', $request->password, time()+7200);
             }
-            // die();
             Auth::login($user);
             return redirect()->intended('home')->withSuccess('Login successful');
         }
-        return redirect()->intended('home')->withSuccess('Login failed');
+        return redirect()->intended('login')->withSuccess('Login failed');
     }
 
     public function register(){

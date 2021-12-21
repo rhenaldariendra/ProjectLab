@@ -2,35 +2,29 @@
     margin: 0;
     padding: 0;
 }
-
-body {
-    background-color: #FCF5E0;
-}
 a{
     text-decoration: none;
 }
 
-.contents{
+
+.product-container{
     padding: 0 100px;
     height: 73vh;
     overflow: hidden;
     overflow-y: auto;
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    /* grid-template-rows: ; */
+    grid-template-areas: "a a a a";
+    gap: 10px;
+    grid-auto-columns:auto;
+    grid-auto-rows: 400px;
     justify-items: center;
-    row-gap: 500px;
-    /* column-gap: 70px; */
 }
-
-
-.box{
+.product-box{
     width: 300px;
     height: fit-content;
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     overflow: hidden;
-    /* margin: 25px ; */
 }
 
 .slide-img{
