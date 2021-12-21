@@ -18,11 +18,6 @@ class ProductController extends Controller
     public function detailProduct($id){
         $data = Product::find($id);
         $title = $data['title'];
-        // Product
-        // return view('detail', [
-        //     'detailProduct' => $data,
-        //     'title' => $title,
-        // ]);
         return view('detail', compact('data', 'title'));
     }
 

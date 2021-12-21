@@ -16,13 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
-// Route::get('/home', function () {
-//     return view('home');
-// });
-
 Route::get('/login', function () {
     return view('login');
 });
@@ -60,5 +53,6 @@ Route::post('updateProfile', [AuthController::class, 'updateProfile'])->name('ac
 Route::post('changePassword', [AuthController::class, 'updatePassword'])->name('password-update');
 
 
-Route::get('detail/{id}', [AuthController::class, 'loginValidateToShowDetailProduct']);
+Route::get('detail/{id}', [ProductController::class, 'detailProduct']);
+
 

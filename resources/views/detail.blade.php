@@ -38,13 +38,16 @@
                         <legend>Rp. {{$data['price']}},-</legend>
                     </div>
                 </div>
+                @if(Session::has('user'))
+                @if(Session::get('user')['is_admin']==false)
                 <div class="box">
                     <p>Quantity</p>
                     <input type="number" name="" id="">
                 </div>
 
                 <button type="submit">Add to Cart</button>
-
+                @endif
+                @endif
             </div>
 
 

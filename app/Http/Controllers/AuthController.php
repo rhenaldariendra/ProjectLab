@@ -19,14 +19,6 @@ class AuthController extends Controller
     public function index(){
         return view('login');
     }
-    public function loginValidateToShowDetailProduct($id){
-        if(!Auth::check()){
-            return redirect("login")->withSuccess('You are not allowed to access');
-        }
-        $data = Product::find($id);
-        $title = $data['title'];
-        return view('detail', compact('data', 'title'));
-    }
 
 
     public function updateProfile(Request $request){
