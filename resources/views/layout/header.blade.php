@@ -13,7 +13,7 @@
         <a href="/register">Register</a>
         @else
         @if(Session::get('user')['is_admin']==false)
-            <a href="{{route('account')}}">My Account</a>
+            <a href="/myaccount">My Account</a>
         @endif
         <a href="{{route('logout')}}">Log Out</a>
         @endguest
