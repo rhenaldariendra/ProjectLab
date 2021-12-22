@@ -16,16 +16,20 @@ body{
 
 .container{
     height: 73vh;
+    display: flex;
+    /* width: fit-content; */
+    align-items: center;
+    justify-content: center;
 }
 
 form{
-    position:absolute;
+    /* position:absolute; */
     display: flex;
     width: 375px;
     height: fit-content;
-    top: 50%;
+    /* top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
     justify-content: center;
     flex-direction:column;
 }
@@ -42,7 +46,7 @@ input, .inputs{
 
 .bi{
     position: absolute;
-    left: 90%;
+    right: 42%;
     margin-top: 20px;
     /* top:10px; */
     /* top: 40px; */
