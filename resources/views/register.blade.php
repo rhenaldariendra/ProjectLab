@@ -17,21 +17,43 @@
                 @csrf
                 <div class="form-group">
                     <p>Name</p>
-                    <input type="text" name="name" id="name" placeholder="mbwekcenter">
+                    <input type="text" name="name" id="name" placeholder="mbwekcenter" value="{{old('name')}}">
+                    @error('name')
+                    <div class="error-msg">
+                        <strong>
+                            {{$message}}
+                        </strong>
+                    </div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <p>Email</p>
-                    <input type="email" name="email" id="email" placeholder="mbwekcenter@binus.ac.id">
+                    <input type="email" name="email" id="email" placeholder="mbwekcenter@binus.ac.id" value="{{old('email')}}">
+                    @error('email')
+                    <div class="error-msg">
+                        <strong>
+                            {{$message}}
+                        </strong>
+                    </div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <p>Password</p>
-                    <i onclick="toggleIconPassword(this)"class="bi bi-eye" id="togglePassword"></i>
                     <input type="password" name="password" id="password" placeholder="Password">
+                    @error('password')
+                    <div class="error-msg">
+                        <strong>{{$message}}</strong>
+                    </div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <p>Confirmation Password</p>
-                    <i onclick="toggleIconPassword(this)"class="bi bi-eye" id="togglePassword"></i>
-                    <input type="password" name="confpassword" id="confpassword" placeholder="Password">
+                    <input type="password" name="confirmation" id="confirmation" placeholder="Password">
+                    @error('confirmation')
+                    <div class="error-msg">
+                        <strong>{{$message}}</strong>
+                    </div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
@@ -40,6 +62,11 @@
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
+                    @error('gender')
+                    <div class="error-msg">
+                        <strong>{{$message}}</strong>
+                    </div>
+                    @enderror
                 </div>
                 <button type="submit"  value="Register" class="btn">Regsiter</button>
 

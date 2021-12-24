@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/admin', function () {
+    return view('admin');
+});
 Route::get('/register', function (){
     return view('register');
 });
@@ -30,6 +34,7 @@ Route::get('/detail', function (){
 Route::get('/', [ProductController::class, 'showAllProducts']);
 Route::get('/home', [ProductController::class, 'showAllProducts']);
 
+Route::get('/manageUser', [AdminController::class, 'showUsers']);
 
 
 Route::get('/myaccount', function(){
@@ -54,5 +59,7 @@ Route::post('changePassword', [AuthController::class, 'updatePassword'])->name('
 
 
 Route::get('detail/{id}', [ProductController::class, 'detailProduct']);
+
+Route::get('deleteUser/{id}', [AdminController::class, 'deleteUser']);
 
 
