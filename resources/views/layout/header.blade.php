@@ -6,16 +6,38 @@
     </div>
 
     <div class="navbar-down">
-        <a href="/">Home</a>
-        <a href="#">Search Product</a>
-        @guest
-        <a href="/login">Login</a>
-        <a href="/register">Register</a>
-        @else
-        @if(Session::get('user')['is_admin']==false)
-            <a href="/myaccount">My Account</a>
-        @endif
-        <a href="{{route('logout')}}">Log Out</a>
-        @endguest
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="#">Search Product</a>
+            </li>
+            @guest
+            <li>
+                <a href="/login">Login</a>
+            </li>
+            <li>
+                <a href="/register">Register</a>
+            </li>
+            @else
+            @if(Session::get('user')['is_admin']==false)
+            <li>
+                <a href="/myaccount">My Account</a>
+            </li>
+            @else
+            <li>
+                <a href="/admin">Admin</a>
+                <ul>
+                    <li><a href="#">Insert Product</a></li>
+                    <li><a href="/manageUser">Manage Users</a></li>
+                </ul>
+            </li>
+            @endif
+            <li>
+                <a href="{{route('logout')}}">Log Out</a>
+            </li>
+            @endguest
+        </ul>
     </div>
 </div>

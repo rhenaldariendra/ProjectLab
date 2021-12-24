@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin:0 ;
+    padding:0;
+}
+body{
+    background-color: #FCF5E0;
+}
+a{
+    text-decoration:none;
+}
+a, p, legend, h1, h2, h3, h4, h5{
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.container{
+    height:64.6vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    height: 80%;
+    width: 90%;
+    background-color:white;
+    border-radius: 20px
+}
+.box-top{
+    height: 15%;
+    background-color:#f5decd;
+    border-radius: 20px 20px 0 0;
+    color: black;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.box-down{
+    box-sizing: border-box;
+    overflow: hidden;
+    /* padding: 20px 0; */
+    overflow-y: auto;
+
+}
+
+.user-box{
+    width: 100%;
+    padding: 20px 50px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-box p{
+    font-size: 25px;
+}
+.user-box a{
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color:rgb(255, 83, 83);
+}

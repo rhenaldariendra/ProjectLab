@@ -22,9 +22,6 @@ class AuthController extends Controller
 
 
     public function updateProfile(Request $request){
-        // $request->validate([
-        //     'password' => 'same:confpassword',
-        // ]);
         User::find(auth()->user()->id)->update(['name'=>$request->name]);
         User::find(auth()->user()->id)->update(['gender'=>$request->gender]);
         return redirect('myaccount');
@@ -69,8 +66,8 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:8|required_with:confpassword',
-            'confpassword' => 'required|min:8',
+            'password' => 'required|min:8|required_with:confirmation',
+            'confirmation' => 'required|min:8',
             'gender' => 'required',
         ]);
         $data = $request->all();
