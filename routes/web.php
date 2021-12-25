@@ -29,6 +29,9 @@ Route::get('/register', function (){
 Route::get('/detail', function (){
     return view('detail');
 });
+Route::get('/insert', function (){
+    return view('insertProduct');
+});
 
 
 Route::get('/', [ProductController::class, 'showAllProducts']);
@@ -61,5 +64,7 @@ Route::post('changePassword', [AuthController::class, 'updatePassword'])->name('
 Route::get('detail/{id}', [ProductController::class, 'detailProduct']);
 
 Route::get('deleteUser/{id}', [AdminController::class, 'deleteUser']);
+
+Route::post('/insertImage', [AdminController::class, 'addData'])->name('insert-image');
 
 

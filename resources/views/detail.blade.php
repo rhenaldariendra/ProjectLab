@@ -13,7 +13,7 @@
     <div class="container">
         <div class="container-left">
             <div class="gambar">
-                <img src="{{$data['image']}}" alt="">
+                <img src="{{Storage::url($data['image'])}}" alt="">
             </div>
             {{-- <h1>Add To Cart</h1> --}}
         </div>
@@ -29,7 +29,7 @@
                 <div class="box stock">
                     <p>Stock</p>
                     <div class="items">
-                        <legend>{{$data['price']}} Piece(s)</legend>
+                        <legend>{{$data['stock']}} Piece(s)</legend>
                     </div>
                 </div>
                 <div class="box price">

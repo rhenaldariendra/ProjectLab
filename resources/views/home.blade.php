@@ -19,7 +19,7 @@
         @foreach ($listProducts as $item=>$data)
         <div class="product-box">
             <div class="slide-img">
-                <img src="{{$data->image}}" alt="" />
+                <img src="{{Storage::url($data->image)}}" alt="" />
                 <div class="overlay">
                     @if(Session::has('user'))
                     <a href="detail/{{$data->id}}" class="buy-btn">Product Detail</a>
