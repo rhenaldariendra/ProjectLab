@@ -2,7 +2,7 @@
 
 <div class="navbar">
     <div class="navbar-up">
-        <img src="/Asset/Image/logo.svg" alt="mbwekcenter">
+        <img src="{{Storage::url('Asset/Image/logo.svg')}}" alt="mbwekcenter">
     </div>
 
     <div class="navbar-down">
@@ -27,9 +27,9 @@
             </li>
             @else
             <li>
-                <a href="/admin">Admin</a>
+                <a href="#">Admin</a>
                 <ul>
-                    <li><a href="#">Insert Product</a></li>
+                    <li><a href="/insert">Insert Product</a></li>
                     <li><a href="/manageUser">Manage Users</a></li>
                 </ul>
             </li>
