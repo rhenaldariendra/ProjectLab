@@ -9,7 +9,7 @@ a, p, legend, h1, h2, h3, h4{
 }
 
 
-input, button{
+input, button, select{
     border-style: none;
 }
 
@@ -40,14 +40,14 @@ form{
     justify-content: center;
     flex-direction:column;
 }
-input{
+input, .inputs{
     height: 54px;
     border: 1px solid #4B4B4B;
     background-color: #FCF5E0;
     border-radius: 8px;
     text-indent: 20px;
 }
-.form-group input{
+.form-group input, .inputs{
     width: 100%;
 }
 

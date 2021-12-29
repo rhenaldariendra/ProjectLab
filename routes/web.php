@@ -34,6 +34,7 @@ Route::get('/insert', function (){
 });
 
 
+
 Route::get('/', [ProductController::class, 'showAllProducts']);
 Route::get('/home', [ProductController::class, 'showAllProducts']);
 
@@ -61,10 +62,14 @@ Route::post('updateProfile', [AuthController::class, 'updateProfile'])->name('ac
 Route::post('changePassword', [AuthController::class, 'updatePassword'])->name('password-update');
 
 
-Route::get('detail/{id}', [ProductController::class, 'detailProduct']);
 
 Route::get('deleteUser/{id}', [AdminController::class, 'deleteUser']);
 
 Route::post('/insertImage', [AdminController::class, 'addData'])->name('insert-image');
 
+
+
+Route::get('detail/{id}', [ProductController::class, 'detailProduct']);
+Route::get('update/{id}/edit', [ProductController::class, 'showUpdateDetail']);
+Route::put('update/{id}', [AdminController::class, 'updateProduct']);
 
