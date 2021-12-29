@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     public function showAllProducts(){
-        $data = DB::table('products')->get();
-        // dd($data);
+        // $data = DB::table('products')->get();
+        $data = Product::all();
         return view('home', ['listProducts' => $data]);
     }
 
@@ -21,6 +21,10 @@ class ProductController extends Controller
         return view('detail', compact('data', 'title'));
     }
 
+    public function showUpdateDetail(Product $id){
+        $data = Product::find($id->id);
+        return view('updateProduct', ['data' => $data]);
+    }
 
 }
 

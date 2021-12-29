@@ -24,7 +24,7 @@
                     @if(Session::has('user'))
                     <a href="detail/{{$data->id}}" class="buy-btn">Product Detail</a>
                     @if(Session::get('user')['is_admin']==true)
-                    <a href="#" class="buy-btn">Update Product</a>
+                    <a href="update/{{$data->id}}/edit" class="buy-btn">Update Product</a>
                     @endif
                     @else
                     <a href="detail/{{$data->id}}" class="buy-btn">Product Detail</a>
