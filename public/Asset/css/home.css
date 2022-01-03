@@ -119,3 +119,30 @@ a{
     animation: fade 0.5s;
 }
 
+.container-top {
+    box-sizing: border-box;
+    padding:0 400px;
+    width:100%;
+    height:fit-content;
+}
+form{
+    display: flex;
+    height: 40px;
+    width: 100%;
+}
+input, button{
+    border-style: none;
+}
+
+form input{
+    border-radius: 10px 0 0 10px;
+    border: 1px solid #4B4B4B;
+    padding-left:20px;
+    width: 95%;
+}
+form button{
+    border: 1px solid #4B4B4B;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    width: 5%;
+}

@@ -5,16 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
     public function showUsers(){
+        if(Session::get('user')['is_admin']==false){
+            return redirect('/');
+        }
         $data = User::all();
         return view('manageUser', ['listUsers' => $data]);
     }
 
     public function deleteUser($id){
+        if(Session::get('user')['is_admin']==false){
+            return redirect('/');
+        }
         $data = User::find($id);
         // dd($data);
         $data->delete();
@@ -23,6 +30,9 @@ class AdminController extends Controller
     }
 
     public function addData(Request $request){
+        if(Session::get('user')['is_admin']==false){
+            return redirect('/');
+        }
         $new = new Product();
 
         $file = $request->file('image');
@@ -43,9 +53,12 @@ class AdminController extends Controller
     }
 
     public function updateProduct(Request $request){
+        if(Session::get('user')['is_admin']==false){
+            return redirect('/');
+        }
         $product = Product::find($request->id);
         $file = $request->file('image');
-        
+
         if($file!=null){
             $image_name = time().'.'.$file->getClientOriginalExtension();
             Storage::putFileAs('public/Asset/Image', $file, $image_name);

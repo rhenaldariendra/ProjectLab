@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function showAllProducts(){
         // $data = DB::table('products')->get();
-        $data = Product::all();
+        $data = Product::paginate();
         return view('home', ['listProducts' => $data]);
     }
 
@@ -57,6 +57,12 @@ class ProductController extends Controller
     public function getCart($id){
         $cart = Cart::where('user_id', $id)->get();
         return $cart;
+    }
+
+    public function viewSearch(Request $request){
+        $product = Product::where('title', 'LIKE', "%$request->search%")->simplePaginate(2);
+        // dd($product);
+        return view('home', ['listProducts' => $product]);
     }
 }
 
