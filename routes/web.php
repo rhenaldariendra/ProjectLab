@@ -81,3 +81,7 @@ Route::post('/detail/addToCart', [ProductController::class, 'addToCart'])->name(
 
 Route::get('/cart/{id}', [ProductController::class, 'getCart']);
 
+Route::get('/search', [ProductController::class, 'viewSearch']);
+
+// Route::post('/search', [ProductController::class, 'viewSearch']);
+

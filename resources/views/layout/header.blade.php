@@ -10,9 +10,6 @@
             <li>
                 <a href="/">Home</a>
             </li>
-            <li>
-                <a href="#">Search Product</a>
-            </li>
             @guest
             <li>
                 <a href="/login">Login</a>

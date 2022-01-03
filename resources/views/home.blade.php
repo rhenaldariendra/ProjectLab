@@ -7,13 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/Asset/css/home.css">
     <link rel="stylesheet" href="/Asset/css/product.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
     <title>Home</title>
 </head>
 
 <body>
     {{View::make('layout.header')}}
-
+    <div class="container-top">
+        <form action="{{url('/search')}}">
+            <input type="text" name="search" id="search">
+            <button type="submit">
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+    </div>
     <div class="product-container">
 
         @foreach ($listProducts as $item=>$data)
@@ -39,8 +47,10 @@
             </div>
         </div>
         @endforeach
-
     </div>
+    <h1>
+        {{$listProducts->withQueryString()->links()}}
+    </h1>
 
 
     {{View::make('layout.footer')}}

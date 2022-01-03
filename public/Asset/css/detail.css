@@ -11,9 +11,16 @@ p, a, legend, h1, h2, h3, h4, h5{
 }
 .container{
     display: flex;
-    height: 73vh;
+    min-height: 64.5vh;
+    /* height:fit-content; */
+    padding-bottom:50px;
+    justify-content:center;
+    align-items:center;
 }
 .container-left, .container-right{
+    display:flex;
+    justify-content:center;
+    align-items:center;
     width: 50%;
     height:100%;
 }
@@ -25,10 +32,10 @@ p, a, legend, h1, h2, h3, h4, h5{
 } */
 
 .gambar{
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%);
     position: relative;
     top: 50%;
-    left: 50%;
+    left: 50%; */
     /* background-color:blue; */
     width: 60%;
     height: 60%;
@@ -49,19 +56,19 @@ input{
 
 
 .detail-container{
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     height: 70%;
     width: 80%;
-    position: relative;
-    top: 50%;
-    left: 50%;
+    /* position: relative; */
+    /* top: 50%; */
+    /* left: 50%; */
     /* background-color:brown; */
 }
 .box.stock legend, .box.price legend{
     text-indent: 10px;
 }
 .box.stock, .box.price{
-    width: 20%;
+    width: 28%;
 }
 .box, .items{
     width: 100%;
