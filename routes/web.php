@@ -73,3 +73,8 @@ Route::get('detail/{id}', [ProductController::class, 'detailProduct']);
 Route::get('update/{id}/edit', [ProductController::class, 'showUpdateDetail']);
 Route::put('update/{id}', [AdminController::class, 'updateProduct']);
 
+
+Route::post('/detail/addToCart', [ProductController::class, 'addToCart'])->name('add_to_cart');
+
+Route::get('/cart/{id}', [ProductController::class, 'getCart']);
+

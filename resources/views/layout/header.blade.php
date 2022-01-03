@@ -23,7 +23,14 @@
             @else
             @if(Session::get('user')['is_admin']==false)
             <li>
-                <a href="/myaccount">My Account</a>
+                <a href="#">{{Session::get('user')['name']}}</a>
+                <ul>
+                    <li>
+                        <a href="/myaccount">My Account</a>
+                    </li>
+                    <li><a href="/cart/{{Session::get('user')['id']}}">Cart</a></li>
+
+                </ul>
             </li>
             @else
             <li>
