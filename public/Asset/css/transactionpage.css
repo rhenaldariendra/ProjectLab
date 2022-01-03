@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a, p, legend, h1, h2, h3, h4{
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.judul {
+    background-color:#D4C9D4;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7vh;
+    font-size: 30px;
+}
+
+.container{
+    height:64.6vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    height: 80%;
+    width: 90%;
+    background-color:white;
+    border-radius: 20px
+}
+.box-top{
+    height: 10%;
+    background-color:#f5decd;
+    border-radius: 20px 20px 0 0;
+    color: black;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.box-down{
+    box-sizing: border-box;
+    overflow: hidden;
+    /* padding: 20px 0; */
+    overflow-y: auto;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-box{
+    width: 100%;
+    padding: 20px 50px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-box p{
+    font-size: 25px;
+}
+.user-box a{
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color:rgb(255, 83, 83);
+}
+

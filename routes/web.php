@@ -29,6 +29,9 @@ Route::get('/register', function (){
 Route::get('/detail', function (){
     return view('detail');
 });
+Route::get('/TransactionPage', function (){
+    return view('TransactionPage');
+});
 Route::get('/insert', function (){
     return view('insertProduct');
 });
