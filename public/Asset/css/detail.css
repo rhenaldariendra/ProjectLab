@@ -88,3 +88,27 @@ input{
     /* width: 200px; */
     height:30px;
 }
+
+button{
+    border-radius: 10px;
+    font-size:15px;
+    margin-top: 20px;
+    padding: 20px 0;
+    border-style: none;
+    width: 20%;
+    border: 1px solid #4B4B4B;
+    background-color: #FCF5E0;
+}
+
+
+.errror-box{
+    width: fit-content;
+    padding: 20px 10px;
+    margin-top: 20px;
+    background-color: #E57373;
+    border-radius: 10px;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+}
+

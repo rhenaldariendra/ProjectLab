@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -26,5 +27,36 @@ class ProductController extends Controller
         return view('updateProduct', ['data' => $data]);
     }
 
+    public function addToCart(Request $request){
+        $validate = $request->validate([
+            'product_id'=> 'required',
+            'quantity'=>'required',
+            'stock' => 'required',
+        ]);
+        $product = Product::find($validate['product_id']);
+        // dd($product->stock);
+        $cart_table = Cart::find($validate['product_id']);
+        if(Cart::find($validate['product_id'])){
+            return redirect()->back()->withErrors('Item already in cart');
+        }
+        else if($product->stock < $validate['quantity']){
+            return redirect()->back()->withErrors('Stock does not meet the request');
+        }
+        else{
+            // if()
+            $cart = new Cart();
+            $cart->user_id = $request->session()->get('user')['id'];
+            $cart->product_id = $validate['product_id'];
+            $cart->quantity = $validate['quantity'];
+            $cart->save();
+
+            return redirect('/');
+        }
+    }
+
+    public function getCart($id){
+        $cart = Cart::where('user_id', $id)->get();
+        return $cart;
+    }
 }
 

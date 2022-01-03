@@ -9,8 +9,14 @@
 </head>
 <body>
     {{View::make('layout.header')}}
-
     <div class="container">
+        @if ($errors->any())
+        <legend>
+            <div class="errror-box">
+                {{$errors->first()}}
+            </div>
+        </legend>
+        @endif
         <div class="container-left">
             <div class="gambar">
                 <img src="{{Storage::url($data['image'])}}" alt="">
@@ -40,12 +46,19 @@
                 </div>
                 @if(Session::has('user'))
                 @if(Session::get('user')['is_admin']==false)
-                <div class="box">
-                    <p>Quantity</p>
-                    <input type="number" name="" id="">
-                </div>
+                <form action="{{route('add_to_cart')}}" method="POST">
+                    @csrf
 
-                <button type="submit">Add to Cart</button>
+
+                    <input type="hidden" name="product_id" value="{{$data['id']}}">
+                    <input type="hidden" name="stock" value="{{$data['stock']}}">
+                    <div class="box">
+                        <p>Quantity</p>
+                        <input type="number" name="quantity" id="quantity">
+                    </div>
+
+                    <button type="submit">Add to Cart</button>
+                </form>
                 @endif
                 @endif
             </div>
