@@ -26,8 +26,10 @@
                     <input type="text" name="email" id="email" placeholder="mbwekcenter" value="{{Auth::user()->email}}">
                 </div>
 
+
                 <div class="form-group">
                     <p>Gender</p>
+
                     <select class="inputs" name="gender" id="gender">
                         @if (Auth::user()->gender=="Female")
 
@@ -44,31 +46,13 @@
                 <button type="submit" value="Register" class="btn">Update</button>
                 <button class="btn"><a href="/myaccount">Back</a></button>
 
-
             </form>
 
         </div>
 
     </div>
     {{View::make('layout.footer')}}
-    <script>
-        function toggleIconPassword(x) {
-            if (x.classList.contains('bi-eye')) {
-                x.classList.remove("bi-eye");
-                x.classList.add("bi-eye-slash");
-            } else if (x.classList.contains("bi-eye-slash")) {
-                x.classList.remove("bi-eye-slash");
-                x.classList.add("bi-eye");
-            }
-            var y = document.getElementById("password");
-            if (y.type == "password") {
-                y.type = "text";
-            } else {
-                y.type = "password";
-            }
-        }
-
-    </script>
+    
 
 </body>
 

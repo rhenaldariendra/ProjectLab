@@ -13,15 +13,19 @@ p, a, legend, h1, h2, h3, h4, h5{
 }
 
 .container{
-    height: 73vh;
+    /* height: 73vh; */
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container-box{
-    position: relative;
-    transform: translate(-50%,-50%);
+    /* position: relative;
+    transform: translate(-50%,-50%); */
     border-radius: 10px;
-    top: 50%;
-    left: 50%;
+    /* top: 50%;
+    left: 50%; */
     width : 900px;
     height : fit-content;
     /* background-color: rgb(255, 255, 255); */
