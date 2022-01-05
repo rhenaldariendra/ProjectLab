@@ -30,7 +30,6 @@ class AuthController extends Controller
     public function updatePassword(Request $request){
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->newpassword)]);
         return redirect('myaccount');
-
     }
 
 
@@ -93,6 +92,6 @@ class AuthController extends Controller
         Session::flush();
         Session::forget('user');
         Auth::logout();
-        return Redirect('login');
+        return redirect('login');
     }
 }

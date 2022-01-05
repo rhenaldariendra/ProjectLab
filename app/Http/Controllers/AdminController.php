@@ -69,7 +69,7 @@ class AdminController extends Controller
         }
         else{
             $image_name = $product->image;
-            dd($image_name);
+            // dd($image_name);
         }
 
         $product->category = $request['category'];
@@ -82,6 +82,7 @@ class AdminController extends Controller
 
         return redirect('/');
     }
+
 
 
 

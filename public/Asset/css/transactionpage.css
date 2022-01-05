@@ -5,6 +5,9 @@
 a, p, legend, h1, h2, h3, h4{
     font-family: 'Red Hat Display', sans-serif;
 }
+body{
+    background-color: #FCF5E0;
+}
 
 .judul {
     background-color:#D4C9D4;

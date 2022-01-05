@@ -67,6 +67,7 @@ Route::post('changePassword', [AuthController::class, 'updatePassword'])->name('
 
 
 Route::get('deleteUser/{id}', [AdminController::class, 'deleteUser']);
+Route::get('deleteItemCart/{id}', [ProductController::class, 'deleteItemCart']);
 
 Route::post('/insertImage', [AdminController::class, 'addData'])->name('insert-image');
 
@@ -85,3 +86,6 @@ Route::get('/search', [ProductController::class, 'viewSearch']);
 
 // Route::post('/search', [ProductController::class, 'viewSearch']);
 
+Route::get('/cartss', function(){
+    return view('cart');
+});

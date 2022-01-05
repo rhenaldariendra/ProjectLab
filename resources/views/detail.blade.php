@@ -10,13 +10,7 @@
 <body>
     {{View::make('layout.header')}}
     <div class="container">
-        @if ($errors->any())
-        <legend>
-            <div class="errror-box">
-                {{$errors->first()}}
-            </div>
-        </legend>
-        @endif
+
         <div class="container-left">
             <div class="gambar">
                 <img src="{{Storage::url($data['image'])}}" alt="">
@@ -49,12 +43,19 @@
                 <form action="{{route('add_to_cart')}}" method="POST">
                     @csrf
 
-
+                    {{-- <input type="hidden" name="user_"> --}}
                     <input type="hidden" name="product_id" value="{{$data['id']}}">
                     <input type="hidden" name="stock" value="{{$data['stock']}}">
                     <div class="box">
                         <p>Quantity</p>
                         <input type="number" name="quantity" id="quantity">
+                        @if ($errors->any())
+        <legend>
+            <div class="errror-box">
+                {{$errors->first()}}
+            </div>
+        </legend>
+        @endif
                     </div>
 
                     <button type="submit">Add to Cart</button>

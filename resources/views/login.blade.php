@@ -38,7 +38,7 @@
                     <input type="password" name="password" id="password" placeholder="Password" value="{{$password}}">
                 </div>
                 <div class="remember">
-                    <input type="checkbox" name="remember_me" id="remember_me" {{$remembered}}>
+                    <input type="checkbox" name="remember_me" id="remember_me" {{$remembered}} >
                     <h1>Remember me</h1>
                 </div>
                 <button type="submit" value="Login" class="btn">Login</button>

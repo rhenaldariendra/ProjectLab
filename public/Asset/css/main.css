@@ -48,7 +48,10 @@ li, ul{
 }
 
 .navbar-down ul ul{
+    border-radius: 0 0 10px 10px;
+    background-color: #FCF5E0;
     position: absolute;
+    left: -20px;
     top: 60px;
     display: none;
     /* background-color: #D4C9D4; */
@@ -61,7 +64,7 @@ li, ul{
 .navbar-down ul li ul a:hover{
     /* background-color: #fff; */
     /* font-size: 22px; */
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
 

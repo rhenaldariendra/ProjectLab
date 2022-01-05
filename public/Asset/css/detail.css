@@ -110,12 +110,11 @@ button{
 
 .errror-box{
     width: fit-content;
+    /* top: 25%; */
     padding: 20px 10px;
     margin-top: 20px;
     background-color: #E57373;
     border-radius: 10px;
-    position: absolute;
-    transform: translateX(-50%);
     left: 50%;
 }
 
